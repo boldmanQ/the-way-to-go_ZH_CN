@@ -6,6 +6,7 @@ import "fmt"
 // integer producer:
 func numGen(start, count int, out chan<- int) {
 	for i := 0; i < count; i++ {
+        fmt.Println(i,start)
 		out <- start
 		start = start + count
 	}

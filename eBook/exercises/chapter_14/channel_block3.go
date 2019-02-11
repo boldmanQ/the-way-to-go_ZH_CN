@@ -6,6 +6,7 @@ import "time"
 func main() {
 	c := make(chan int)
 	go func() {
+        fmt.Println("sleep 10")
 		time.Sleep(15 * 1e9)
 		x := <-c
 		fmt.Println("received", x)
