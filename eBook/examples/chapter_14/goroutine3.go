@@ -1,6 +1,7 @@
 package main
 
 import "fmt"
+import "time"
 
 func main() {
 	ch := make(chan string)
@@ -9,6 +10,7 @@ func main() {
 }
 
 func sendData(ch chan string) {
+    time.Sleep(2e9)
 	ch <- "Washington"
 	ch <- "Tripoli"
 	ch <- "London"

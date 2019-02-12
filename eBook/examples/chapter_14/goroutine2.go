@@ -11,7 +11,7 @@ func main() {
 	go sendData(ch)
 	go getData(ch)
 
-	time.Sleep(1e9)
+    time.Sleep(4e9)
 }
 
 func sendData(ch chan string) {
@@ -24,10 +24,11 @@ func sendData(ch chan string) {
 
 func getData(ch chan string) {
 	var input string
-	// time.Sleep(1e9)
 	for {
 		input = <-ch
 		fmt.Printf("%s ", input)
+         fmt.Println("sleep 5e8")
+	    time.Sleep(5e8)
 	}
 }
 
